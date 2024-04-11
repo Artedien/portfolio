@@ -1,0 +1,9 @@
+.footer {
+    display: none;
+    &__inner {
+        padding: 9rem 0 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-end;
+    }
+}

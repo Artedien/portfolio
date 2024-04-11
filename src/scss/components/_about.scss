@@ -1,0 +1,167 @@
+.about {
+
+    position: relative;
+    padding: clamp(60px, 5vw, 120px) 0 clamp(40px, 5vw, 160px);
+    .floating {
+        position: absolute;
+        display: inline-block;
+        opacity: 0.08;
+        animation-name: floating;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        @keyframes floating {
+            0% {
+                transform: translateY(0%) rotate(-55deg);
+            }
+            50% {
+                transform: translateY(300%) rotate(55deg);
+            }
+            100% {
+                transform: translateY(0%) rotate(-55deg);
+            }
+        }
+        @-webkit-keyframes floating {
+            0% {
+                -webkit-transform: translateY(0%);
+            }
+            50% {
+                -webkit-transform: translateY(300%);
+            }
+            100% {
+                -webkit-transform: translateY(0%);
+            }
+        }
+    }
+    &__inner {
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        position: relative;
+        display: inline-block;
+        align-self: center;
+        margin-bottom: clamp(20px, 8vw, 100px);
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: -31%;
+            top: -35%;
+            z-index: -1;
+            width: 60%;
+            height: 200%;
+            background: url(./assets/images/about__title.svg) no-repeat;
+            z-index: -1;
+            opacity: 0.2;
+        }
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 35px;
+        flex-shrink: 5;
+        @include small-tablet {
+            flex-direction: column-reverse;
+            gap: 10rem;
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        max-width: 60rem;
+        width: 100%;
+    }
+    &__desk {
+        line-height: 25px; /* 125% */
+        line-height: clamp(20px, 2vw, 25px);
+        letter-spacing: 1.6px;
+        & span {
+            color: $mainColor;
+            font-size: clamp(18px, 3vw, 24px);
+            letter-spacing: 1.92px;
+        }
+        margin-bottom: 20px;
+    }
+    &__skils {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &__skils-title {
+        color: $mainColor;
+        font-size: 24px;
+        font-size: clamp(18px, 3vw, 24px);
+        line-height: 1.7;
+        letter-spacing: 1.92px;
+    }
+    &__skils-list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: clamp(15px, 2vw, 25px) clamp(5px, 2vw, 40px);
+    }
+    &__skils-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: clamp(10px, 1vw, 12px);
+
+        letter-spacing: 0.8px;
+        transition: all 0.3s ease;
+
+        & path {
+            transition: all 0.3s ease;
+            fill: $svgColor;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+            color: $mainColor;
+            & path {
+                fill: $mainColor;
+            }
+        }
+    }
+    &__svg--square {
+        width: 50px;
+        width: clamp(25px, 5vw, 50px);
+
+        height: clamp(25px, 5vw, 50px);
+    }
+    &__svg--rectangular {
+        width: clamp(15px, 5vw, 30px);
+        height: clamp(25px, 5vw, 50px);
+    }
+    &__photo-box {
+        width: 40rem;
+        height: 49rem;
+        position: relative;
+        padding: 0 10px 10px 0;
+        // height: fit-content;
+        flex-shrink: 0.5;
+        flex-basis: 35%;
+        & img {
+            width: 40rem;
+            height: 49rem;
+            display: block;
+            width: 100%;
+            border: 12px solid $photoBorder;
+            box-shadow: 4px 4px 8px 0px $photoBorderShadow;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            right: -15px;
+            bottom: -15px;
+            z-index: -1;
+            border: 12px solid $mainColor;
+            box-shadow: 4px 4px 8px 0px $photoSecondBorderShadow;
+        }
+    }
+}
