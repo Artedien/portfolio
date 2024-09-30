@@ -136,18 +136,20 @@
         height: clamp(25px, 5vw, 50px);
     }
     &__photo-box {
+        flex-shrink: 0;
         width: 40rem;
         height: 49rem;
         position: relative;
         padding: 0 10px 10px 0;
         // height: fit-content;
+
         flex-shrink: 0.5;
         flex-basis: 35%;
         & img {
             width: 40rem;
+            object-fit: cover;
             height: 49rem;
             display: block;
-            width: 100%;
             border: 12px solid $photoBorder;
             box-shadow: 4px 4px 8px 0px $photoBorderShadow;
         }
