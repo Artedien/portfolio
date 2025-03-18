@@ -4,7 +4,7 @@
     padding: 2.5rem 0;
     height: 7rem;
     @include small-tablet{
-        padding: 2.5rem 0;
+        padding: 5.5rem 0;
     }
 
 
@@ -15,10 +15,14 @@
         gap: 2rem;
         font-family: $secondFont;
         color: $heroColor;
+
     }
     &__portfolio {
         letter-spacing: 2px;
         text-transform: uppercase;
+        @include small-tablet{
+        font-size: 3.5rem;
+        }
     }
     &__nav {
         @include small-tablet {
@@ -95,11 +99,11 @@
 
 .burger {
     position: relative;
-    width: 3rem;
-    height: 2rem;
+    width: 5rem;
+    height: 3rem;
     z-index: 101;
     position: fixed;
-    right: 1.5rem;
+    right: 3.2rem;
     display: none;
     &__line {
         position: absolute;
@@ -136,12 +140,12 @@
         left: 0;
         top: 50%;
         transform: rotate(45deg);
-        width: 2.5rem;
+        width: 5.5rem;
         border: none;
     }
     &.active::after {
         left: 0;
-        width: 2.5rem;
+        width: 5.5rem;
         bottom: auto;
         top: 50%;
         transform: rotate(-45deg);

@@ -165,19 +165,25 @@
         &-pagination-box {
             position: relative;
             width: 22rem;
-            height: 5rem;
+            // height: 5rem;
             left: 50%;
             transform: translateX(-50%);
             margin-top: -8.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            @include small-tablet{
+                margin-top: 2rem;
+            }
         }
 
         &-pagination {
             position: relative;
-            bottom: 0;
+            bottom: 0!important;
+            left: 0!important;
+            transform:none!important;
             height: 8rem;
+
         }
         &-pagination-bullet {
             width: 1rem;
@@ -197,11 +203,18 @@
         &-button-prev,
         &-button-next {
             position: relative;
+            margin: 0!important;
+            width: 5rem!important;
+            height: 5rem!important;
             &::after {
                 content: '';
                 position: absolute;
                 width: 1.5rem;
                 height: 2rem;
+                @include small-tablet{
+                    width: 3rem;
+                    height: 3rem;
+                }
             }
         }
 

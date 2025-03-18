@@ -7,7 +7,7 @@ const slider = () => {
         centeredSlides: true,
         coverflowEffect: {
             rotate: 0,
-            stretch: 186,
+            stretch: 100,
             depth: 110,
             modifier: 2.5,
             slideShadows: true,
